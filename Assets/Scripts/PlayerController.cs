@@ -6,11 +6,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
 
     [Header("발사")]
-    public GameObject bulletPrefab;    
-    public Transform firePoint;     
-    public float fireRate = 0.2f;      
+    public GameObject bulletPrefab;
+    public float fireRate = 0.2f;
 
     private float nextFireTime = 0f;
+    private Vector3 fireOffset = new Vector3(0, 0.5f, 0); // FirePoint 대신 직접 계산
 
     void Update()
     {
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         Shoot();
     }
 
-    void Move() 
+    void Move()
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -32,10 +32,13 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
+        if (bulletPrefab == null) return;
+
         if (Input.GetKey(KeyCode.Space) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + fireRate;
-            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            Vector3 spawnPos = transform.position + fireOffset;
+            Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
         }
     }
 }
