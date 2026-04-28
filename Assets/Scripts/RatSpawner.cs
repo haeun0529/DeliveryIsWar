@@ -3,7 +3,7 @@ using UnityEngine;
 public class RatSpawner : MonoBehaviour
 {
     public GameObject ratPrefab;
-    public float spawnRate = 1f; 
+    public float spawnRate = 0.3f; 
     private float nextSpawnTime = 0f;
 
     void Update()

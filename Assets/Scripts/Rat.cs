@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
-    public float speed = 3f;
+    public float speed = 6f;
     private Transform player;
 
     void Start()
