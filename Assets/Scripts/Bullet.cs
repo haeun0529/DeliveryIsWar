@@ -3,15 +3,23 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
-    private float destroyTime = 3f;
 
     void Start()
     {
-        Destroy(gameObject, destroyTime);
+        Destroy(gameObject, 3f);
     }
 
     void Update()
     {
         transform.position += Vector3.up * speed * Time.deltaTime;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Rat"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
