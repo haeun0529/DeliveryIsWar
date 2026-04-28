@@ -60,3 +60,7 @@ mono_crash.*
 /[Aa]ssets/[Ss]ceneDependencyCache*
 
 .DS_Store
+
+*.shader
+Packages/
+Library/
