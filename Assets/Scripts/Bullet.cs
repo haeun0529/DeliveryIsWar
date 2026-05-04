@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Rat"))
         {
+            ScoreManager.Instance.AddScore(1);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
