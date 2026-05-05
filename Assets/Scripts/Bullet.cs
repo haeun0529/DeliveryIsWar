@@ -13,8 +13,8 @@ public class Bullet : MonoBehaviour
     {
         transform.position += Vector3.up * speed * Time.deltaTime;
 
-        if (transform.position.y > 8f || transform.position.y < -8f ||
-            transform.position.x > 6f || transform.position.x < -6f)
+        if (transform.position.y > 7f || transform.position.y < -7f ||
+            transform.position.x > 5f || transform.position.x < -5f)
         {
             Destroy(gameObject);
         }

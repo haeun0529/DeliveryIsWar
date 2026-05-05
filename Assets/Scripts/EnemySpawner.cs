@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private float nextSpawnTime = 0f;
 
     // 차선 X좌표
-    private float[] laneX = { -4.3f, -1.75f, 1f, 3.7f };
+    private float[] laneX = { -4f, -1.5f, 1.5f, 4.0f };
 
     void Update()
     {
