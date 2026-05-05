@@ -5,8 +5,9 @@ public class TimerManager : MonoBehaviour
 {
     public static TimerManager Instance;
 
-    public float bossSpawnTime = 60f;
+    public float bossSpawnTime = 120f;
     public TextMeshProUGUI timerText;
+    public GameObject midBossPrefab;
 
     private float currentTime = 0f;
     private bool bossSpawned = false;
@@ -18,13 +19,15 @@ public class TimerManager : MonoBehaviour
 
     void Update()
     {
+        if (bossSpawned) return;
+
         currentTime += Time.deltaTime;
 
         int minutes = (int)(currentTime / 60f);
         int seconds = (int)(currentTime % 60f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        if (!bossSpawned && currentTime >= bossSpawnTime)
+        if (currentTime >= bossSpawnTime)
         {
             bossSpawned = true;
             BossSpawn();
@@ -33,7 +36,15 @@ public class TimerManager : MonoBehaviour
 
     void BossSpawn()
     {
-        FindObjectOfType<RatSpawner>().enabled = false;
-        Debug.Log("보스 등장!");
+        EnemySpawner spawner = FindObjectOfType<EnemySpawner>();
+        if (spawner != null)
+            spawner.enabled = false;
+
+        if (midBossPrefab != null)
+        {
+            Vector3 spawnPos = new Vector3(0, 8f, 0);
+            Instantiate(midBossPrefab, spawnPos, Quaternion.identity);
+            Debug.Log("중간 보스 등장!");
+        }
     }
 }

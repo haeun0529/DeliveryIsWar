@@ -46,5 +46,13 @@ public class Bullet : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("MidBoss"))
+        {
+            MidBossController midBoss = other.GetComponent<MidBossController>();
+            if (midBoss != null)
+                midBoss.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }

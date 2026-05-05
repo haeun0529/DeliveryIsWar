@@ -29,6 +29,18 @@ public class PlayerHealth : MonoBehaviour
                 Debug.Log("게임 오버!");
                 gameObject.SetActive(false);
             }
+
+            if (other.CompareTag("MidBoss"))
+            {
+                currentHp--;
+                UpdateHpUI();
+
+                if (currentHp <= 0)
+                {
+                    Debug.Log("게임 오버!");
+                    gameObject.SetActive(false);
+                }
+            }
         }
     }
 
