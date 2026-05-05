@@ -12,16 +12,20 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.up * speed * Time.deltaTime;
+
+        if (transform.position.y > 8f || transform.position.y < -8f ||
+            transform.position.x > 6f || transform.position.x < -6f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("충돌: " + other.gameObject.tag);
-
         if (other.CompareTag("Motorcycle"))
         {
             if (ScoreManager.Instance != null)
-                ScoreManager.Instance.AddScore(3); // 오토바이
+                ScoreManager.Instance.AddScore(3);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
@@ -29,7 +33,7 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("BulletMotorcycle"))
         {
             if (ScoreManager.Instance != null)
-                ScoreManager.Instance.AddScore(5); // 탄막 오토바이
+                ScoreManager.Instance.AddScore(5);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
@@ -37,17 +41,9 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Car"))
         {
             if (ScoreManager.Instance != null)
-                ScoreManager.Instance.AddScore(3); // 승용차
+                ScoreManager.Instance.AddScore(2);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-
-        /*
-        if (other.CompareTag("Boss"))
-        {
-            other.GetComponent<BossController>().TakeDamage(1);
-            Destroy(gameObject);
-        }
-        */
     }
 }
