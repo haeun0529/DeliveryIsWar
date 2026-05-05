@@ -18,6 +18,13 @@ public class BulletMotorcycle : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.y < -10f || transform.position.y > 12f ||
+            transform.position.x < -8f || transform.position.x > 8f)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + fireRate;
