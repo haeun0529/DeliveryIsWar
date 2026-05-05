@@ -15,12 +15,14 @@ public class PlayerHealth : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Rat"))
+        if (other.CompareTag("Motorcycle") ||
+            other.CompareTag("BulletMotorcycle") ||
+            other.CompareTag("Car") ||
+            other.CompareTag("EnemyBullet"))
         {
             currentHp--;
             Destroy(other.gameObject);
             UpdateHpUI();
-            Debug.Log("남은 HP: " + currentHp);
 
             if (currentHp <= 0)
             {
