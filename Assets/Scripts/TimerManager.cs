@@ -21,15 +21,13 @@ public class TimerManager : MonoBehaviour
 
     void Update()
     {
-        if (bossSpawned) return;
-
         currentTime += Time.deltaTime;
 
         int minutes = (int)(currentTime / 60f);
         int seconds = (int)(currentTime % 60f);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        if (currentTime >= bossSpawnTime)
+        if (!bossSpawned && currentTime >= bossSpawnTime)
         {
             bossSpawned = true;
             BossSpawn();
