@@ -11,7 +11,6 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRate = 1.5f;
     private float nextSpawnTime = 0f;
 
-    // 차선 X좌표
     private float[] laneX = { -4f, -1.5f, 1.5f, 4.0f };
 
     void Update()

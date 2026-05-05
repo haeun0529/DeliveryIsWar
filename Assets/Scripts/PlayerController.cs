@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("발사")]
     public GameObject bulletPrefab;
     public float fireRate = 0.2f;
+    public int damage = 1;
 
     private float nextFireTime = 0f;
     private Vector3 fireOffset = new Vector3(0, 0.5f, 0);
@@ -38,7 +39,21 @@ public class PlayerController : MonoBehaviour
         {
             nextFireTime = Time.time + fireRate;
             Vector3 spawnPos = transform.position + fireOffset;
-            Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+            GameObject newBullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+
+            Bullet bulletScript = newBullet.GetComponent<Bullet>();
+            if (bulletScript != null)
+                bulletScript.damage = damage;
         }
+    }
+
+    public void IncreaseDamage(int amount)
+    {
+        damage += amount;
+    }
+
+    public void IncreaseFireRate(float amount)
+    {
+        fireRate = Mathf.Max(0.05f, fireRate - amount);
     }
 }
