@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MidBossController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class MidBossController : MonoBehaviour
 
     [Header("HP")]
     public int hp = 100;
+    public int maxHp = 100;
+    public Slider hpBar;
 
     private Transform player;
     private float startX;
@@ -24,6 +27,13 @@ public class MidBossController : MonoBehaviour
         startX = transform.position.x;
 
         transform.position = new Vector3(0, fixedY, 0);
+
+        if (hpBar != null)
+        {
+            hpBar.maxValue = maxHp;
+            hpBar.value = hp;
+            hpBar.gameObject.SetActive(true);
+        }
     }
 
     void Update()
@@ -57,10 +67,17 @@ public class MidBossController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hp -= damage;
+
+        if (hpBar != null)
+            hpBar.value = hp;
+
         Debug.Log("중간 보스 HP: " + hp);
 
         if (hp <= 0)
         {
+            if (hpBar != null)
+                hpBar.gameObject.SetActive(false);
+
             Destroy(gameObject);
             Debug.Log("중간 보스 처치!");
         }

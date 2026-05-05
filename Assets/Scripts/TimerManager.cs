@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class TimerManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class TimerManager : MonoBehaviour
     public float bossSpawnTime = 120f;
     public TextMeshProUGUI timerText;
     public GameObject midBossPrefab;
+    public Slider bossHpBar;
 
     private float currentTime = 0f;
     private bool bossSpawned = false;
@@ -43,7 +45,16 @@ public class TimerManager : MonoBehaviour
         if (midBossPrefab != null)
         {
             Vector3 spawnPos = new Vector3(0, 8f, 0);
-            Instantiate(midBossPrefab, spawnPos, Quaternion.identity);
+            GameObject boss = Instantiate(midBossPrefab, spawnPos, Quaternion.identity);
+
+            if (bossHpBar != null)
+            {
+                bossHpBar.gameObject.SetActive(true);
+                MidBossController midBoss = boss.GetComponent<MidBossController>();
+                if (midBoss != null)
+                    midBoss.hpBar = bossHpBar;
+            }
+
             Debug.Log("중간 보스 등장!");
         }
     }
