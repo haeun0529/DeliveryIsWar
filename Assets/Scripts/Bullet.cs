@@ -54,5 +54,13 @@ public class Bullet : MonoBehaviour
                 midBoss.TakeDamage(damage);
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Boss"))
+        {
+            BossController boss = other.GetComponent<BossController>();
+            if (boss != null)
+                boss.TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }
