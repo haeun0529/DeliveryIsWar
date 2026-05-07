@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
             other.CompareTag("Car") ||
             other.CompareTag("EnemyBullet") ||
             other.CompareTag("MidBossBullet") ||
+            other.CompareTag("BossBullet") ||
             other.CompareTag("Banana"))
         {
             currentHp--;

@@ -59,9 +59,11 @@ public class BossController : MonoBehaviour
         if (bulletPrefab != null)
         {
             Vector2 dir = (player.position - transform.position).normalized;
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
-            Destroy(bullet, 5f);
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
+            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, rotation);
+            Destroy(bullet, 6f);
         }
     }
 
