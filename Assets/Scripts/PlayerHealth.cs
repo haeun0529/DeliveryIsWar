@@ -24,7 +24,8 @@ public class PlayerHealth : MonoBehaviour
             other.CompareTag("BulletMotorcycle") ||
             other.CompareTag("Car") ||
             other.CompareTag("EnemyBullet") ||
-            other.CompareTag("MidBossBullet"))
+            other.CompareTag("MidBossBullet") ||
+            other.CompareTag("Banana"))
         {
             currentHp--;
             Destroy(other.gameObject);
