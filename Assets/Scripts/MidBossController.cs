@@ -5,8 +5,8 @@ public class MidBossController : MonoBehaviour
 {
     [Header("이동")]
     public float moveSpeed = 2f;
-    public float moveRange = 3f;   
-    public float fixedY = 6f;   
+    public float moveRange = 3f;
+    public float fixedY = 6f;
 
     [Header("공격")]
     public GameObject bulletPrefab;
@@ -16,24 +16,14 @@ public class MidBossController : MonoBehaviour
     [Header("HP")]
     public int hp = 100;
     public int maxHp = 100;
-    public Slider hpBar;
+    public Image hpFill; 
 
     private Transform player;
-    private float startX;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        startX = transform.position.x;
-
         transform.position = new Vector3(0, fixedY, 0);
-
-        if (hpBar != null)
-        {
-            hpBar.maxValue = maxHp;
-            hpBar.value = hp;
-            hpBar.gameObject.SetActive(true);
-        }
     }
 
     void Update()
@@ -68,15 +58,15 @@ public class MidBossController : MonoBehaviour
     {
         hp -= damage;
 
-        if (hpBar != null)
-            hpBar.value = hp;
+        if (hpFill != null)
+            hpFill.fillAmount = (float)hp / maxHp;
 
         Debug.Log("중간 보스 HP: " + hp);
 
         if (hp <= 0)
         {
-            if (hpBar != null)
-                hpBar.gameObject.SetActive(false);
+            if (hpFill != null)
+                hpFill.transform.parent.gameObject.SetActive(false);
 
             Destroy(gameObject);
             Debug.Log("중간 보스 처치!");
