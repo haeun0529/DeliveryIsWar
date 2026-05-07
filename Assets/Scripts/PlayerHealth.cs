@@ -1,11 +1,16 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHp = 3;
     private int currentHp;
-    public TextMeshProUGUI hpText;
+
+    public Image heart1;
+    public Image heart2;
+    public Image heart3;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
     void Start()
     {
@@ -30,28 +35,25 @@ public class PlayerHealth : MonoBehaviour
                 Debug.Log("게임 오버!");
                 gameObject.SetActive(false);
             }
+        }
 
-            if (other.CompareTag("MidBoss"))
+        if (other.CompareTag("MidBoss"))
+        {
+            currentHp--;
+            UpdateHpUI();
+
+            if (currentHp <= 0)
             {
-                currentHp--;
-                UpdateHpUI();
-
-                if (currentHp <= 0)
-                {
-                    Debug.Log("게임 오버!");
-                    gameObject.SetActive(false);
-                }
+                Debug.Log("게임 오버!");
+                gameObject.SetActive(false);
             }
         }
     }
 
     void UpdateHpUI()
     {
-        string hearts = "";
-        for (int i = 0; i < currentHp; i++)
-            hearts += "♥ ";
-        for (int i = currentHp; i < maxHp; i++)
-            hearts += "♡ ";
-        hpText.text = hearts;
+        heart1.sprite = currentHp >= 1 ? fullHeart : emptyHeart;
+        heart2.sprite = currentHp >= 2 ? fullHeart : emptyHeart;
+        heart3.sprite = currentHp >= 3 ? fullHeart : emptyHeart;
     }
 }

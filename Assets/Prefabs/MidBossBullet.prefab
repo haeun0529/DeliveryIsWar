@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2037335177002777722}
   - component: {fileID: 4852751316362488164}
   - component: {fileID: 6304720594410610883}
-  - component: {fileID: 958011547402142185}
+  - component: {fileID: 524453139685654115}
   m_Layer: 0
   m_Name: MidBossBullet
   m_TagString: MidBossBullet
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 3836472017780956901}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.026355, y: 0.32157123, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: -1.9174, y: 0.4787, z: 0}
+  m_LocalScale: {x: 2.5, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.6320754, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 3124949146848436715, guid: 406076679fa0e408d99994431a720b35, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -116,8 +116,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &958011547402142185
-CapsuleCollider2D:
+--- !u!60 &524453139685654115
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -151,5 +151,22 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3, y: 0.67}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.08, y: 0.074999996}
+      - {x: -0.14999999, y: 0.035}
+      - {x: -0.14999999, y: -0.315}
+      - {x: -0.099999994, y: -0.33499998}
+      - {x: 0.14999999, y: -0.33499998}
+      - {x: 0.14999999, y: 0.055}
+      - {x: 0.089999996, y: 0.074999996}
+  m_UseDelaunayMesh: 0

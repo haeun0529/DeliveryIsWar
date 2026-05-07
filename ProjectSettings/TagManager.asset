@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Rat
+  - Motorcycle
+  - BulletMotorcycle
+  - Car
+  - EnemyBullet
+  - MidBoss
+  - MidBossBullet
+  - MidBossHpBar
   layers:
   - Default
   - TransparentFX
