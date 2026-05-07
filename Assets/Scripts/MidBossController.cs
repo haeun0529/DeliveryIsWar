@@ -16,7 +16,7 @@ public class MidBossController : MonoBehaviour
     [Header("HP")]
     public int hp = 100;
     public int maxHp = 100;
-    public Image hpFill; 
+    public Image hpFill;
 
     private Transform player;
 
@@ -67,6 +67,10 @@ public class MidBossController : MonoBehaviour
         {
             if (hpFill != null)
                 hpFill.transform.parent.gameObject.SetActive(false);
+
+            EnemySpawner spawner = FindObjectOfType<EnemySpawner>();
+            if (spawner != null)
+                spawner.enabled = true;
 
             Destroy(gameObject);
             Debug.Log("중간 보스 처치!");
