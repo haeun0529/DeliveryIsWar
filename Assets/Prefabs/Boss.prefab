@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1247.3306, y: 684.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2424553518018739129, guid: b4cd923cabe9c477c8c5b528dbbef044, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -132,10 +132,10 @@ MonoBehaviour:
   moveSpeed: 2
   moveRange: 3
   fixedY: 6
-  bulletPrefab: {fileID: 0}
-  fireRate: 1
-  bananaPrefab: {fileID: 2182440263872126043}
-  bananaSpawnRate: 3
+  bulletPrefab: {fileID: 670654867705032106, guid: 866942457536847f3af77575d21c88c8, type: 3}
+  fireRate: 5
+  bananaPrefab: {fileID: 8700255768353856623, guid: 92b0a153bcc704374a1d7cb694ad1abc, type: 3}
+  bananaSpawnRate: 5
   hp: 300
   maxHp: 300
   hpFill: {fileID: 0}

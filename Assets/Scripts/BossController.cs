@@ -18,7 +18,7 @@ public class BossController : MonoBehaviour
     public GameObject bananaPrefab;
     public float bananaSpawnRate = 3f;
     private float nextBananaTime = 0f;
-    private float[] laneX = { -4f, -1.5f, 1.5f, 4f };
+    private float[] laneX = { -4.3f, -1.75f, 1f, 3.7f };
 
     [Header("HP")]
     public int hp = 300;
@@ -59,11 +59,9 @@ public class BossController : MonoBehaviour
         if (bulletPrefab != null)
         {
             Vector2 dir = (player.position - transform.position).normalized;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
-            Quaternion rotation = Quaternion.Euler(0, 0, angle);
-
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, rotation);
-            Destroy(bullet, 6f);
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
+            Destroy(bullet, 4f);
         }
     }
 

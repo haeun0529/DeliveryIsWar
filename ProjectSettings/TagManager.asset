@@ -12,6 +12,9 @@ TagManager:
   - MidBoss
   - MidBossBullet
   - MidBossHpBar
+  - Boss
+  - Banana
+  - BossBullet
   layers:
   - Default
   - TransparentFX
