@@ -707,7 +707,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.50922143}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.50922143}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 704937125}
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midBossSpawnTime: 99999
-  bossSpawnTime: 10
+  bossSpawnTime: 3
   midBossPrefab: {fileID: 3468322128358802174, guid: 61449bce24f7045cfbbace74bab10b28, type: 3}
   bossPrefab: {fileID: 2182440263872126043, guid: ba5319d00f0ae4253bc9d96d8711262d, type: 3}
   bossHpFill: {fileID: 0}
