@@ -18,18 +18,28 @@ public class MidBossController : MonoBehaviour
     public int maxHp = 100;
     public Image hpFill;
 
+    [Header("제한 시간")]
+    public float timeLimit = 60f;
+    private float spawnTime;
+
     private Transform player;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         transform.position = new Vector3(0, fixedY, 0);
+        spawnTime = Time.time; 
     }
 
     void Update()
     {
         MoveLeftRight();
         ShootAtPlayer();
+
+        if (Time.time - spawnTime >= timeLimit)
+        {
+            BossFlee();
+        }
     }
 
     void MoveLeftRight()
@@ -52,6 +62,19 @@ public class MidBossController : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().linearVelocity = dir * 6f;
             Destroy(bullet, 5f);
         }
+    }
+
+    void BossFlee()
+    {
+        if (hpFill != null)
+            hpFill.transform.parent.gameObject.SetActive(false);
+
+        EnemySpawner spawner = FindObjectOfType<EnemySpawner>();
+        if (spawner != null)
+            spawner.enabled = true;
+
+        Debug.Log("중간 보스 도망!");
+        Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
