@@ -614,7 +614,7 @@ MonoBehaviour:
   speed: 5
   bulletPrefab: {fileID: 1639549708765651021, guid: 747a2920e2da542d8b93393009070cf8, type: 3}
   fireRate: 0.4
-  damage: 1
+  damage: 10
 --- !u!50 &493978280
 Rigidbody2D:
   serializedVersion: 5
@@ -812,8 +812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd553388c01654185942b5acf13e4cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midBossSpawnTime: 99999
-  bossSpawnTime: 3
+  midBossSpawnTime: 10
+  bossSpawnTime: 30
   midBossPrefab: {fileID: 3468322128358802174, guid: 61449bce24f7045cfbbace74bab10b28, type: 3}
   bossPrefab: {fileID: 2182440263872126043, guid: ba5319d00f0ae4253bc9d96d8711262d, type: 3}
   bossHpFill: {fileID: 0}
