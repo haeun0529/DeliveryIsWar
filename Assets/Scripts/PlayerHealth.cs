@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -33,23 +34,23 @@ public class PlayerHealth : MonoBehaviour
             UpdateHpUI();
 
             if (currentHp <= 0)
-            {
-                Debug.Log("게임 오버!");
-                gameObject.SetActive(false);
-            }
+                GameOver();
         }
 
-        if (other.CompareTag("MidBoss"))
+        if (other.CompareTag("MidBoss") || other.CompareTag("Boss"))
         {
             currentHp--;
             UpdateHpUI();
 
             if (currentHp <= 0)
-            {
-                Debug.Log("게임 오버!");
-                gameObject.SetActive(false);
-            }
+                GameOver();
         }
+    }
+
+    void GameOver()
+    {
+        Debug.Log("게임 오버!");
+        SceneManager.LoadScene("GameOver");
     }
 
     void UpdateHpUI()
