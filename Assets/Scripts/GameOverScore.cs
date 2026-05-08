@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameOverScoreDisplay : MonoBehaviour
+public class GameOverScore: MonoBehaviour
 {
     public Image digit1;
     public Image digit2;
