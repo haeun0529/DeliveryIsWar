@@ -7,19 +7,14 @@ public class ScoreManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
     public void AddScore(int amount)
     {
         score += amount;
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.totalScore = score;
     }
 }
