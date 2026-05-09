@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("발사")]
     public GameObject bulletPrefab;
     public float fireRate = 0.2f;
-    public int damage = 1;
+    public float damage = 1;
 
     private float nextFireTime = 0f;
     private Vector3 fireOffset = new Vector3(0, 0.5f, 0);
