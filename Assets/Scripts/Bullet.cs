@@ -27,6 +27,8 @@ public class Bullet : MonoBehaviour
         {
             if (ScoreManager.Instance != null)
                 ScoreManager.Instance.AddScore(3);
+            if (ItemSpawner.Instance != null)
+                ItemSpawner.Instance.TrySpawnItem(other.transform.position);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
@@ -35,6 +37,8 @@ public class Bullet : MonoBehaviour
         {
             if (ScoreManager.Instance != null)
                 ScoreManager.Instance.AddScore(5);
+            if (ItemSpawner.Instance != null)
+                ItemSpawner.Instance.TrySpawnItem(other.transform.position);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
@@ -43,6 +47,8 @@ public class Bullet : MonoBehaviour
         {
             if (ScoreManager.Instance != null)
                 ScoreManager.Instance.AddScore(2);
+            if (ItemSpawner.Instance != null)
+                ItemSpawner.Instance.TrySpawnItem(other.transform.position);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Item_AttackSpeed : MonoBehaviour
 {
-    public float fireRateBonus = 0.2f;
+    public float fireRateBonus = 0.1f;
     public float moveSpeed = 2f;
 
     void Start()

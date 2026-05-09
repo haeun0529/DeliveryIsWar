@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   midBossSpawnTime: 120
-  bossSpawnTime: 300
+  bossSpawnTime: 240
   midBossPrefab: {fileID: 3468322128358802174, guid: 61449bce24f7045cfbbace74bab10b28, type: 3}
   bossPrefab: {fileID: 2182440263872126043, guid: ba5319d00f0ae4253bc9d96d8711262d, type: 3}
   bossHpFill: {fileID: 401881038}
@@ -2984,7 +2984,7 @@ MonoBehaviour:
   motorcyclePrefab: {fileID: 72743791193792622, guid: 2e502feaf2c3c4d7496082c73b847601, type: 3}
   bulletMotorcyclePrefab: {fileID: 4921562587525819021, guid: 875d50897a725495db8d081927ad3371, type: 3}
   carPrefab: {fileID: 193148784226146891, guid: 8600e8fa999784168909c53c9c916505, type: 3}
-  spawnRate: 0.7
+  spawnRate: 0.9
 --- !u!114 &1709780036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3239,6 +3239,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877931633}
   m_CullTransparentMesh: 1
+--- !u!1 &1894794846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894794848}
+  - component: {fileID: 1894794847}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1894794847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894794846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cd8c14e027246c494dc4f4b405ad84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalScore: 0
+--- !u!4 &1894794848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894794846}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 975.4457, y: 578.0736, z: -5.248504}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904391768
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,3 +3489,4 @@ SceneRoots:
   - {fileID: 1625327253}
   - {fileID: 515691064}
   - {fileID: 927814235}
+  - {fileID: 1894794848}
