@@ -133,7 +133,7 @@ MonoBehaviour:
   moveRange: 3
   fixedY: 4.5
   bulletPrefab: {fileID: 670654867705032106, guid: 866942457536847f3af77575d21c88c8, type: 3}
-  fireRate: 5
+  fireRate: 3
   bananaPrefab: {fileID: 8700255768353856623, guid: 92b0a153bcc704374a1d7cb694ad1abc, type: 3}
   bananaSpawnRate: 5
   hp: 300
