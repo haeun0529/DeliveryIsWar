@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Rat
   - Motorcycle
-  - BulletMotorcycle
   - Car
   - EnemyBullet
   - MidBoss
@@ -15,6 +14,8 @@ TagManager:
   - Boss
   - Banana
   - BossBullet
+  - Item
+  - BulletMotorcycle
   layers:
   - Default
   - TransparentFX

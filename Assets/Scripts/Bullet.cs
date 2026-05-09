@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
-    public int damage = 1;
+    public float damage = 1;
 
     void Start()
     {
@@ -51,7 +51,7 @@ public class Bullet : MonoBehaviour
         {
             MidBossController midBoss = other.GetComponent<MidBossController>();
             if (midBoss != null)
-                midBoss.TakeDamage(damage);
+                midBoss.TakeDamage((int)damage);
             Destroy(gameObject);
         }
 
@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
         {
             BossController boss = other.GetComponent<BossController>();
             if (boss != null)
-                boss.TakeDamage(damage);
+                boss.TakeDamage((int)damage);
             Destroy(gameObject);
         }
     }

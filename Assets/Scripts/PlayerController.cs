@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void IncreaseDamage(int amount)
+    public void IncreaseDamage(float amount)
     {
         damage += amount;
     }
