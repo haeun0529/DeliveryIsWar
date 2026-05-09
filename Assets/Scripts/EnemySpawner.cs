@@ -32,14 +32,14 @@ public class EnemySpawner : MonoBehaviour
             float randomX = Random.Range(-4f, 4f);
             Vector3 spawnPos = new Vector3(randomX, 10f, 0);
 
-            if (rand2 < 0.4f)
+            if (rand2 < 0.2f)
             {
-                // 40% 탄막투척 오토바이
+                // 20% 탄막투척 오토바이
                 Instantiate(bulletMotorcyclePrefab, spawnPos, Quaternion.identity);
             }
             else
             {
-                // 60% 일반 오토바이
+                // 80% 일반 오토바이
                 Instantiate(motorcyclePrefab, spawnPos, Quaternion.identity);
             }
         }

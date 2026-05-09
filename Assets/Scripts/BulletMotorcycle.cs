@@ -18,7 +18,7 @@ public class BulletMotorcycle : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < -10f || transform.position.y > 12f ||
+        if (transform.position.y < -7f || transform.position.y > 12f ||
             transform.position.x < -10f || transform.position.x > 10f)
         {
             Destroy(gameObject);

@@ -74,7 +74,7 @@ public class BossController : MonoBehaviour
         {
             int laneIndex = Random.Range(0, laneX.Length);
             float randomY = Random.Range(-5f, 3f);
-            Vector3 spawnPos = new Vector3(laneX[laneIndex], randomY, 0);
+            Vector3 spawnPos = new Vector3(laneX[laneIndex], 10f, 0);
             Instantiate(bananaPrefab, spawnPos, Quaternion.identity);
         }
     }
