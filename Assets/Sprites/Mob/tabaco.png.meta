@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tabaco_0: 5827391088120762546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

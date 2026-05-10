@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bossblood_0: 6890129460782159532
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
