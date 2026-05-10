@@ -94,7 +94,7 @@ public class BossController : MonoBehaviour
                 hpFill.transform.parent.gameObject.SetActive(false);
 
             Destroy(gameObject);
-            SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene("GameClear");
         }
     }
 }
